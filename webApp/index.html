@@ -1,27 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum=1.0,user-scalable=no">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script src='js/font.js'></script>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum=1.0,user-scalable=no"
+          name="viewport">
+    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src='js/font.js'></script>
 </head>
+
 <body>
 
-
 <div class="container">
-	<header>
-			
-		<span class='header-left'></span>
-		<h1 class='header-main'>Supernova</h1>
-		<span class='header-right'></span>
 
-	</header>
-	<section>中间</section>
-	<footer>底部</footer>
+    <header>
+        <a class='header-left' id="back"></a>
+        <h1 class='header-main'>Supernova</h1>
+        <span class='header-right'></span>
+    </header>
+
+    <section>
+        <div class="home" id="home">
+            <div>
+                <a href="#list" title="孕前准备" id='yunqian'>
+                    <img alt="" src="img/pic1.png">
+                </a>
+                <a href="#list" title="孕中知识" id='yunzhong'>
+                    <img alt="" src="img/pic2.png">
+                </a>
+                <a href="#list" title="产前知识" id='chanqian'>
+                    <img alt="" src="img/pic3.png">
+                </a>
+                <a href="#list" title="分娩产后" id='chanhou'>
+                    <img alt="" src="img/pic4.png">
+                </a>
+                <a href="#list" title="幼儿成长指标" id='chengzhang'>
+                    <img alt="" src="img/pic5.png">
+                </a>
+                <a href="#list" title="幼儿常见病防止" id='fangzhi'>
+                    <img alt="" src="img/pic6.png">
+                </a>
+            </div>
+        </div>
+
+        <div id="list" class="list">
+            <div id="listIscroll" class="listIscroll"></div>
+        </div>
+
+        <div class="home" id="favorite">收藏</div>
+
+        <div class="home" id="history">历史记录</div>
+
+        <div class="home" id="setting">设置</div>
+    </section>
+
+    <footer>
+        <nav>
+            <a href="#home">
+                <span>首页</span>
+                <p>Home</p>
+            </a>
+            <a href="#favorite">
+                <span>收藏</span>
+                <p>Favorite</p>
+                </a>
+            <a href="#history">
+                <span>历史记录</span>
+                <p>History</p>
+            </a>
+            <a href="#setting">
+                <span>设置</span>
+                <p>Setting</p>
+            </a>
+        </nav>
+        <mark></mark>
+    </footer>
+
 </div>
-
-	
+<script src='js/iscroll.js'></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/touch.js"></script>
+<script src='js/fx.js'></script>
+<script src='js/script.js'></script>
 </body>
 </html>

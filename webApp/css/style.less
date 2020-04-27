@@ -12,6 +12,8 @@ ul{
 a{
 	text-decoration: none;
 }
+
+/**************header***************/
 header{
 	width: 100%;
 	height: 1.3333333rem;
@@ -25,14 +27,19 @@ header{
 		background: url('../img/back.png') no-repeat;
 		background-size:100% auto;
 		display: none;
+		z-index: 2;
 	}
 	.header-main{
+		z-index: 1;
+		position: absolute;
+		width: 100%;
 		flex: 1;
 		color:#fff;
 		font-size:.6rem;
 		text-align: center;
 	}
 	.header-right{
+		z-index: 2;
 		margin-right:.5rem;
 		width:.8rem;
 		height: .8rem;
@@ -43,11 +50,89 @@ header{
 
 }
 
-
-
+/**************section***************/
 section{
 	flex:1;
+	overflow: hidden;
+	position: relative;
+	>div{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		transform: translate3d(100%,0,0);
+		background: #47c9af;
+		&:nth-child(1){
+			transform: translate3d(0,0,0);
+		}
+	}
+	.home{
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background: linear-gradient(to bottom, #47c9af 0%,#ffffff 100%);
+		& a{
+			padding-bottom: .2rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			& img{
+				width: 8rem;
+				height: auto;
+				margin-top: .4rem;
+			}
+		}
+	}
+	.list{
+		display: flex;
+		flex-direction: column;
+		a{
+			display: flex;
+			border-bottom: 1px solid #e6e6e6;
+			padding: .6rem .6rem;
+			max-height: 3rem;
+			p{
+				margin-left: .5rem;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 3;
+				overflow: hidden;
+				font-size: .4rem;
+				line-height: 2.106rem;
+			}
+		}
+	}
 }
-footer{
 
+/**************footer***************/
+footer{
+	width: 100%;
+	height: 1.3333333rem;
+	background: #47c9af;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	nav{
+		display: flex;
+		width: 100%;
+		a{
+			z-index: 2;
+			flex: 1;
+			font-size: .4rem;
+			color: #ffffff;
+			text-align: center;
+		}
+	}
+	mark{
+		z-index: 1;
+		width: 25%;
+		height: 1.3333333rem;
+		display: flex;
+		position: absolute;
+		background: #47c9af;
+		top: 0;
+		left: 0;
+		box-shadow: 0 .05rem .18rem #ffffff;
+	}
 }
