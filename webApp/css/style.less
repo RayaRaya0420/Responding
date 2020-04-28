@@ -12,6 +12,11 @@ ul{
 a{
 	text-decoration: none;
 }
+.hidden{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
 
 /**************header***************/
 header{
@@ -32,11 +37,14 @@ header{
 	.header-main{
 		z-index: 1;
 		position: absolute;
-		width: 100%;
+		width: 70%;
+		margin-left: 10%;
+		padding: 0 5%;
 		flex: 1;
 		color:#fff;
 		font-size:.6rem;
 		text-align: center;
+		.hidden;
 	}
 	.header-right{
 		z-index: 2;
@@ -46,6 +54,8 @@ header{
 		background: url('../img/bookmark.png') no-repeat;
 		background-size:100% auto;
 		display: none;
+		position: absolute;
+		right: 0;
 	}
 
 }
@@ -91,6 +101,7 @@ section{
 			border-bottom: 1px solid #e6e6e6;
 			padding: .6rem .6rem;
 			max-height: 3rem;
+			color: #000000;
 			p{
 				margin-left: .5rem;
 				display: -webkit-box;
@@ -101,6 +112,12 @@ section{
 				line-height: 2.106rem;
 			}
 		}
+	}
+	.article-content{
+		padding: .8rem;
+		font-size: .48rem;
+		color: #000000;
+		line-height: .8rem;
 	}
 }
 

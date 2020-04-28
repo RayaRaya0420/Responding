@@ -15,6 +15,11 @@ ul {
 a {
   text-decoration: none;
 }
+.hidden {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 /**************header***************/
 header {
   width: 100%;
@@ -35,11 +40,16 @@ header .header-left {
 header .header-main {
   z-index: 1;
   position: absolute;
-  width: 100%;
+  width: 70%;
+  margin-left: 10%;
+  padding: 0 5%;
   flex: 1;
   color: #fff;
   font-size: 0.6rem;
   text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 header .header-right {
   z-index: 2;
@@ -49,6 +59,8 @@ header .header-right {
   background: url('../img/bookmark.png') no-repeat;
   background-size: 100% auto;
   display: none;
+  position: absolute;
+  right: 0;
 }
 /**************section***************/
 section {
@@ -93,6 +105,7 @@ section .list a {
   border-bottom: 1px solid #e6e6e6;
   padding: 0.6rem 0.6rem;
   max-height: 3rem;
+  color: #000000;
 }
 section .list a p {
   margin-left: 0.5rem;
@@ -102,6 +115,12 @@ section .list a p {
   overflow: hidden;
   font-size: 0.4rem;
   line-height: 2.106rem;
+}
+section .article-content {
+  padding: 0.8rem;
+  font-size: 0.48rem;
+  color: #000000;
+  line-height: 0.8rem;
 }
 /**************footer***************/
 footer {
