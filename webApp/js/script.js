@@ -1,9 +1,24 @@
+/*300ms延迟*/
+FastClick.attach(document.body);
+
 /*home scroll*/
 new IScroll(".home");
 
 var Data = null,
     arr = ['yunqian', 'yunzhong', 'chanqian', 'chanhou','chengzhang','fangzhi'],
-    brr = ['孕前准备','孕中知识','产前知识','分娩产后','幼儿成长指标','幼儿常见病防止'];
+    brr = ['孕前准备','孕中知识','产前知识','分娩产后','幼儿成长指标','幼儿常见病防止'],
+    ls = localStorage;
+
+if (!ls.getItem("favNames")){
+    ls.setItem("favNames", "[]");
+}
+
+/*收藏页面*/
+var favBrr = JSON.parse(ls.getItem("favNames"));
+$.each(favBrr,function(idx, val){
+    $("#favorite").append("<div>"+(idx+1)+"-"+val+"</div>")
+})
+
 function bindEvent(){
     /*get data*/
     $.ajax({
@@ -16,7 +31,7 @@ function bindEvent(){
     })
 
     /*footer navigation*/
-    $(".container").on("touchend",'a',function(e){
+    $(".container").on("click",'a',function(e){
         e.preventDefault();
         var that = $(this).attr("href"),
             id = $(this).attr("id");
@@ -42,8 +57,27 @@ function bindEvent(){
             getRender($(this));
         }
     })
+
+    /*收藏*/
+    $(".header-right").click(function () {
+        var title = $(this).attr("title"),
+            favArr = JSON.parse(ls.getItem("favNames"));
+
+        if ($.inArray(title,favArr)>-1) {
+            alert("已收藏");
+        }else{
+            addFav(title);
+        }
+    })
 }
 bindEvent();
+
+/*收藏添加到local storage*/
+function addFav(title) {
+    var favArr = JSON.parse(ls.getItem("favNames"));
+    favArr.push(title);
+    ls.setItem("favNames", JSON.stringify(favArr));
+}
 
 /*详情页*/
 function getRender(el) {
@@ -90,6 +124,9 @@ function into(that){
         var splits = that.attr("data-content").split("_")[0];
         var index = $.inArray(splits,arr);
         back.attr("title",brr[index]);
+        fav.attr("title", that.find("p").text());
+    }else{
+        $('.header-main').html(that.find("span").text());
     }
 }
 
